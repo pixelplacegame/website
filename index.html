@@ -1,0 +1,82 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+
+		<title>PIXEL PLACE</title>
+		<meta name="description" content="One giant canvas. Thousands of artists. Every pixel counts - create, defend, or destroy in the ultimate collaborative art game!">
+		<meta name="keywords" content="pixel,place,draw,paint,steam,discord">
+		<meta property="og:title" content="PIXEL PLACE">
+		<meta property="og:description" content="One giant canvas. Thousands of artists. Every pixel counts - create, defend, or destroy in the ultimate collaborative art game!">
+		<meta property="og:url" content="https://pixelplace.site/">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://pixelplace.site/icon.png">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+		<style>
+			body {
+				height: 100%;
+				display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 20px;
+				font-family: "Jua", sans-serif;
+				background-color: #191919;
+				/* background-image: url("/background.png");
+				background-repeat: repeat;
+				background-size: contain; */
+				color: #fff;
+				margin: 0;
+			}
+
+			#header {
+				display: flex; align-items: center;
+				position: absolute; left: 0; top: 0;
+				width: 100%; height: 60px;
+				background-color: #00000080;
+				padding: 0 20px;
+				box-sizing: border-box;
+			}
+
+			#steam-widget {
+				max-width: calc(100% - 30px);
+			}
+
+			#copyright {
+				display: flex; justify-content: center; align-items: center;
+				position: absolute; left: 0; bottom: 0;
+				width: 100%; height: 40px;
+				background-color: #00000080;
+				color: #707070;
+			}
+
+			#logo {
+				display: flex; align-items: center; gap: 10px;
+				color: #ffb349;
+				font-size: 28px;
+			}
+			
+			#icon {
+				width: 30px; height: 30px;
+			}
+		</style>
+
+		<script>
+			let anim = 0;
+			let last_time = Date.now();
+			setInterval(() => {
+				const time = Date.now();
+				anim += Math.min(Date.now() - last_time, 100) / 250;
+				last_time = time;
+				document.body.style.backgroundPosition = `${anim}px ${anim}px`;
+			}, 0);
+		</script>
+	</head>
+	<body>
+		<div id="header">
+			<img id="logo" src="/logo.png">
+		</div>
+		<iframe id="steam-widget" src="https://store.steampowered.com/widget/3946790" frameborder="0" width="646" height="190"></iframe>
+		<div id="copyright">© 2025 iilatt. All Rights Reserved.</div>
+	</body>
+</html>
